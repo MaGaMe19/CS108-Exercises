@@ -66,8 +66,7 @@ public final class Main {
     }
 
     public static void main(String[] args) {
-        // Le L-système à dessiner
-        LSystem lSystem = binaryTree().evolve(20);
+        LSystem lSystem = dragonCurve().evolve(14);
 
         invokeLater(() -> {
             Path2D lSystemPath = LSystemPainter.paint(lSystem);
