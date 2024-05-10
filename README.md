@@ -11,4 +11,5 @@ Everything related to the exercises of EPFL CS-108: Practice of orient-objected 
 - Exercise 06: [SPRD](./SPRD/) - Design Pattern: Observer (Spreadsheet)
 - Exercise 07: [STEG](./STEG/) - Steganography
 - Exercise 08: [STAT](./STAT/) - Statistical File Analysis
+- Exercise 09: [LZW1](./LZW1/) - Compression using the LZW-algorithm (Lempel, Ziv and Welch).
 
