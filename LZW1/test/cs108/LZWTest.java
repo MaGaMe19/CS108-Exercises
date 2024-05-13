@@ -2,12 +2,28 @@ package cs108;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LZWTest {
+    public static void main(String[] args) throws IOException {
+        String text = Files.readString(Path.of("text.txt"));
+        SortedSet<Character> alphabet = stringToSet(text);
+
+        Decoder d = new LZWTest().newDecoder(alphabet, 1024);
+
+        List<Integer> encoded = Files.readAllLines(Path.of("compressed.txt")).stream()
+                .map(Integer::valueOf)
+                .toList();
+
+        System.out.println(d.decode(encoded));
+    }
+
     public Encoder newEncoder(SortedSet<Character> alphabet, int dictCapacity) {
         return new LZWEncoder(alphabet, dictCapacity);
     }
